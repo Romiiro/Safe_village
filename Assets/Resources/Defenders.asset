@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fdab7572d25b6418da36581a46c399, type: 3}
+  m_Name: Defenders
+  m_EditorClassIdentifier: 
+  _startCount: 0
+  _startIncreaseCount: 0
+  _startIncreaseTime: 0
+  _startTimeToRecruit: 5
+  _startConsumeValuePerUnit: 6
+  _startProductionPerUnit: 0
+  _startMultiplyRecruit: 0
+  _startRecruitCost: 6
+  _event: {fileID: 11400000, guid: 4d18c4f142334cb43b91a262609b5f2f, type: 2}
+  _endGameEvent: {fileID: 0}
+  _consumeValuePerUnit: 6
+  _productionPerUnit: 0
+  _timeToRecruit: 5
+  _multiplyRecruit: 0
+  _recruitCost: 6
+  _title: "\u0412\u043E\u0438\u043D"
+  _type: 2
