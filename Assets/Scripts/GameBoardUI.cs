@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameBoardUI : MonoBehaviour {
@@ -13,5 +14,13 @@ public class GameBoardUI : MonoBehaviour {
         _pauseEvent.Rise(true);
         _endGameMenu.SetActive(true);
         _endGameText.DisplayText(status);
+    }
+
+    private void Start() {
+        _pauseEvent.Rise(true);
+    }
+
+    public void EndGame() {
+        SceneManager.LoadScene("MainMenu");
     }
 }

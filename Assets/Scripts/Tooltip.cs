@@ -36,6 +36,11 @@ public class Tooltip : MonoBehaviour {
     private Image _img;
     private Color _backgroundColorFade;
     private Color _textColorFade;
+    private float _resolutionFixX;
+    private float _resolutionFixY;
+    private int _defXRes = 1920;
+    private int _defYRes = 1080;
+
 
     private void Awake() {
         _img = _box.GetComponent<Image>();
@@ -70,6 +75,8 @@ public class Tooltip : MonoBehaviour {
 
         _box.sizeDelta = new Vector2(width, _text.preferredHeight + _border);
         if (show || _isUI) {
+            _resolutionFixX = (float) _defXRes / Screen.width;
+            _resolutionFixY = (float)_defYRes / Screen.height;
             SetPosition();
             _img.color = Color.Lerp(_img.color, _backgroundColor, _speed * Time.deltaTime);
             _text.color = Color.Lerp(_text.color, _textColor, _speed * Time.deltaTime);
@@ -81,17 +88,17 @@ public class Tooltip : MonoBehaviour {
     }
 
     public void SetPosition() {
-        float curY = _object.position.y + _object.sizeDelta.y / 2 + _box.sizeDelta.y / 2 + 10f;
-        if (curY + _box.sizeDelta.y / 2 > Screen.height) {
-            curY = _object.position.y - _object.sizeDelta.y / 2 - _box.sizeDelta.y / 2 - 10f;
+        float curY = _object.position.y * _resolutionFixX + _object.sizeDelta.y / 2 + _box.sizeDelta.y / 2 + 10f; 
+        if (curY + _box.sizeDelta.y / 2 > Screen.currentResolution.height) {
+            curY = _object.position.y * _resolutionFixX - _object.sizeDelta.y / 2 - _box.sizeDelta.y / 2 - 10f;
         }
 
-        float curX = _object.position.x;
-        if (curX + _box.sizeDelta.x / 2 > Screen.width) {
-            curX = _object.position.x - _box.sizeDelta.x - 10;
+        float curX = _object.position.x * _resolutionFixX;
+        if (curX + _box.sizeDelta.x / 2 > Screen.currentResolution.width) {
+            curX = _object.position.x * _resolutionFixX - _box.sizeDelta.x - 10;
         }
         else if (curX - _box.sizeDelta.x / 2 <= 0) {
-            curX = _object.position.x + (_box.sizeDelta.x / 2 - curX) + 10;
+            curX = _object.position.x * _resolutionFixX + (_box.sizeDelta.x / 2 - curX) + 10;
         }
 
         _box.anchoredPosition = new Vector2(curX, curY);
