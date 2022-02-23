@@ -1,20 +1,22 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
 
+/// <summary>
+/// Событие активации/деактивации паузы
+/// </summary>
 [CreateAssetMenu(menuName = "ScriptableObject/Events/PauseEvent")]
 public class PauseEvent : ScriptableObject {
-    private List<PauseListener> listeners = new List<PauseListener>();
+    private List<PauseListener> _listeners = new List<PauseListener>();
     public void RegisterListener(PauseListener listener) {
-        listeners.Add(listener);
+        _listeners.Add(listener);
     }
 
     public void UnregisterListener(PauseListener listener) {
-        listeners.Remove(listener);
+        _listeners.Remove(listener);
     }
 
     public void Rise(bool isPaused) {
-        foreach (var listener in listeners) {
+        foreach (var listener in _listeners) {
             listener.Activate(isPaused);
         }
     }

@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+#region
+
 using UnityEngine;
 
+#endregion
+
+/// <summary>
+/// Таймер битвы(раунда)
+/// </summary>
 public class BattleTimer : Timer {
-
     [SerializeField] private BattleManager _battleManager;
-    private bool _timerIsOn;
-
-    public bool TimerIsOn {
-        get => _timerIsOn;
-        set => _timerIsOn = value;
-    }
-
+    
     public override void RoundIsDone() {
-        _battleManager.OnTimerRound(); 
+        _battleManager.OnTimerRound();
     }
 
     private void FixedUpdate() {
@@ -24,13 +22,5 @@ public class BattleTimer : Timer {
                 _timer = 0;
             }
         }
-    }
-
-    public void StopTimer() {
-        _timerIsOn = false;
-    }
-
-    public void StartTimer() {
-        _timerIsOn = true;
     }
 }

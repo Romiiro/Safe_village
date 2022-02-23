@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ќаблюдатель за событием окончани€ игры
+/// </summary>
 public class EndGameListener : MonoBehaviour {
     [SerializeField] private EndGameEvent _event;
 
@@ -13,7 +14,7 @@ public class EndGameListener : MonoBehaviour {
         _event.UnregisterListener(this);
     }
 
-    public void OnEventRised(EndGameStatus status) {
-        GetComponent<GameBoardUI>().EndGame(status);
+    public void OnEventRised(EndGameCode code) {
+        GetComponent<GameBoardUI>().EndGame(code);
     }
 }

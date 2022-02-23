@@ -1,23 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "ScriptableObject/Events/EndGameEvent")]
-public class EndGameEvent : ScriptableObject
-{
-    private List<EndGameListener> listeners = new List<EndGameListener>();
 
-    public void Rise(EndGameStatus status) {
-        for (int i = 0; i < listeners.Count; i++) {
-            listeners[i].OnEventRised(status);
+/// <summary>
+/// Событие окончания игры
+/// </summary>
+[CreateAssetMenu(menuName = "ScriptableObject/Events/EndGameEvent")]
+public class EndGameEvent : ScriptableObject {
+    private List<EndGameListener> _listeners = new List<EndGameListener>();
+
+    public void Rise(EndGameCode code) {
+        foreach (var listener in _listeners) {
+            listener.OnEventRised(code);
         }
     }
 
     public void RegisterListener(EndGameListener listener) {
-        listeners.Add(listener);
+        _listeners.Add(listener);
     }
 
     public void UnregisterListener(EndGameListener listener) {
-        listeners.Remove(listener);
+        _listeners.Remove(listener);
     }
 
 }

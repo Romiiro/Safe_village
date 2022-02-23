@@ -1,21 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Событие изменения количества ресурсов
+/// </summary>
 [CreateAssetMenu(menuName = "ScriptableObject/Events/ChangeResourcesEvent")]
 public class ChangeResourcesCountEvent : ScriptableObject {
-    private List<ChangeResourcesListener> listeners = new List<ChangeResourcesListener>();
+    private List<ChangeResourcesListener> _listeners = new List<ChangeResourcesListener>();
 
     public void RegisterListener(ChangeResourcesListener listener) {
-        listeners.Add(listener);
+        _listeners.Add(listener);
     }
 
     public void UnRegisterListener(ChangeResourcesListener listener) {
-        listeners.Remove(listener);
+        _listeners.Remove(listener);
     }
 
     public void Rise() {
-        foreach (var listener in listeners) {
+        foreach (var listener in _listeners) {
             listener.Activate();
         }
     }

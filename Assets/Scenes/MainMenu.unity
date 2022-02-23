@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 951792670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4d86c6b62965a438674b656f02d42b, type: 3}
+  m_Script: {fileID: 11500000, guid: 60185a6aba3ea984f89eef0a638db8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _event: {fileID: 11400000, guid: ade36994d586a4946bbe8f0de72c1472, type: 2}
@@ -2315,8 +2315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSettings: {fileID: 11400000, guid: d34fe86a25efd8b4fb56e8568bb3157f, type: 2}
   _generalVolumeSlider: {fileID: 1840376719}
-  _surroundVolumeSlider: {fileID: 170099038}
   _interfaceVolumeSlider: {fileID: 1928406288}
+  _surroundVolumeSlider: {fileID: 170099038}
   _muteSound: {fileID: 1857090206}
 --- !u!114 &1510282543
 MonoBehaviour:
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1510282540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4d86c6b62965a438674b656f02d42b, type: 3}
+  m_Script: {fileID: 11500000, guid: 60185a6aba3ea984f89eef0a638db8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _event: {fileID: 11400000, guid: ade36994d586a4946bbe8f0de72c1472, type: 2}
@@ -2876,7 +2876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca616d36649d86429d3fa6f85c9022b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSettings: {fileID: 0}
+  _audioSettings: {fileID: 11400000, guid: d34fe86a25efd8b4fb56e8568bb3157f, type: 2}
 --- !u!82 &1619541850
 AudioSource:
   m_ObjectHideFlags: 0

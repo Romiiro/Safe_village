@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
 
-public class StartGameListener : MonoBehaviour
-{
+/// <summary>
+/// Ќаблюдатель за событием начала игры
+/// </summary>
+public class StartGameListener : MonoBehaviour {
     private IResetable[] _dependencies;
     [SerializeField] private StartGameEvent _event;
     public void OnEventRised() {

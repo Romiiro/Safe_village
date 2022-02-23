@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+#region
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TooltipTextUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
-{
+#endregion
+
+public class TooltipTextUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     [SerializeField] private string _message;
 
     public string Message {

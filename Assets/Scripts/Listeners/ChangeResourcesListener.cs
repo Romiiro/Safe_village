@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-
+/// <summary>
+/// Ќаблюдатель за событием изменени€ ресурсов
+/// </summary>
 public class ChangeResourcesListener : MonoBehaviour {
     private IResCountDependency _dependency;
     [SerializeField] private ChangeResourcesCountEvent _event;
